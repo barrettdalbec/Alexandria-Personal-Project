@@ -202,6 +202,6 @@ save(Table_1, file = 'Table.RData')
 
 save(Table_2, file = 'New_Data.RData')
 
-write.csv(Table_1, file = 'A_Properties_Table.csv')
+write.csv(Table_1, file = 'Ava_Streets_Table.csv')
 
 write.csv(Table_2, file = 'ABuildingLand.csv')
