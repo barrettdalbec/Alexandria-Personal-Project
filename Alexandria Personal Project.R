@@ -72,6 +72,18 @@ if (file.exists('New_Data.RData')) {
 
 processed_accounts <- Table_2$Num
 
+if (file.exists("Ava_Streets_Table.csv")) {
+  
+  Ava_Streets_Table <- read.csv("Ava_Streets_Table.csv", stringsAsFactors = FALSE)
+  
+  Account_Num <- unique(Ava_Streets_Table$A_Account_Num)
+  
+} else {
+  
+  Account_Num <- Table_1$A_Account_Num
+  
+}
+
 Account_Num <- Table_1$A_Account_Num
 
 not_processed_accounts <- setdiff(Account_Num, processed_accounts)
@@ -117,6 +129,9 @@ for (Num in not_processed_accounts) {
   save(Table_2, file = 'New_Data.RData')
   
 }
+
+
+### Do not run after this for now !!!
 
 fill_na_zip_codes <- function(data) {
   
