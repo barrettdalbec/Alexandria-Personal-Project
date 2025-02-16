@@ -61,9 +61,9 @@ options(timeout = max(1000000, getOption("timeout")))
 
 URL_4 <- "https://realestate.alexandriava.gov/detail.php?accountno="
 
-if (file.exists('New_Data.RData')) {
+if (file.exists('AvaBuildingLand.RData')) {
   
-  load('New_Data.RData')
+  load('AvaBuildingLand.RData')
   
 } else {
   
@@ -74,17 +74,13 @@ processed_accounts <- Table_2$Num
 
 if (file.exists("Ava_Streets_Table.csv")) {
   
+  print('poop')
+  
   Ava_Streets_Table <- read.csv("Ava_Streets_Table.csv", stringsAsFactors = FALSE)
   
   Account_Num <- unique(Ava_Streets_Table$A_Account_Num)
   
-} else {
-  
-  Account_Num <- Table_1$A_Account_Num
-  
-}
-
-Account_Num <- Table_1$A_Account_Num
+} 
 
 not_processed_accounts <- setdiff(Account_Num, processed_accounts)
 
@@ -126,9 +122,11 @@ for (Num in not_processed_accounts) {
   
   Table_2 <- bind_rows(Table_2, Updated_Table)
   
-  save(Table_2, file = 'New_Data.RData')
+  save(Table_2, file = 'AvaBuildingLand.RData')
   
 }
+
+write.csv(Table_2, file = 'AvaBuildingLand.csv')
 
 
 ### Do not run after this for now !!!
