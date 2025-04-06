@@ -1,0 +1,1325 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20251.25.0313.2002                               -->
+<workbook original-version='18.1' source-build='2025.1.0 (20251.25.0313.2002)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SpatialFileLayer />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='AlexandriaPersonalProject' path='/workbooks' revision='1.1' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='ValidZipCodeData.csv (Multiple Connections)' inline='true' name='federated.1py6bf70tn1q1y1f4nr2s0u8m0iw' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ValidZipCodeData' name='textscan.108mdn00dt10ii1aqglbr0e0a54o'>
+            <connection class='textscan' directory='C:/Users/barre/Alexandria Personal Project' filename='ValidZipCodeData.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='AlexandriaZipCode' name='ogrdirect.1o2ovzr0uo2qk2167rkcc0fi93o4'>
+            <connection class='ogrdirect' directory='C:/Users/barre/Alexandria Personal Project' filename='AlexandriaZipCode.geojson' password='' server='' tablename='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.108mdn00dt10ii1aqglbr0e0a54o' name='ValidZipCodeData.csv' table='[ValidZipCodeData#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='Account Number' ordinal='0' />
+              <column datatype='integer' name='Levy Year' ordinal='1' />
+              <column datatype='integer' name='Land Value' ordinal='2' />
+              <column datatype='integer' name='Building Value' ordinal='3' />
+              <column datatype='integer' name='Total Value' ordinal='4' />
+              <column datatype='integer' name='Zip Code' ordinal='5' />
+            </columns>
+          </relation>
+          <relation connection='ogrdirect.1o2ovzr0uo2qk2167rkcc0fi93o4' name='AlexandriaZipCode.geojson' table='[AlexandriaZipCode.geojson]' type='table'>
+            <columns>
+              <column datatype='integer' name='OBJECTID' ordinal='0' />
+              <column datatype='integer' name='ZIPCODE' ordinal='1' />
+              <column datatype='string' name='GlobalID' ordinal='2' />
+              <column datatype='real' name='Shape__Area' ordinal='3' />
+              <column datatype='real' name='Shape__Length' ordinal='4' />
+              <column datatype='spatial' name='Geometry' ordinal='5' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Account Number</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Account Number]</local-name>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias>Account Number</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Levy Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Levy Year]</local-name>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias>Levy Year</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Land Value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Land Value]</local-name>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias>Land Value</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Building Value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Building Value]</local-name>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias>Building Value</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total Value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Total Value]</local-name>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias>Total Value</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Zip Code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Zip Code]</local-name>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias>Zip Code</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OBJECTID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OBJECTID]</local-name>
+            <parent-name>[AlexandriaZipCode.geojson]</parent-name>
+            <remote-alias>OBJECTID</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ZIPCODE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ZIPCODE]</local-name>
+            <parent-name>[AlexandriaZipCode.geojson]</parent-name>
+            <remote-alias>ZIPCODE</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GlobalID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[GlobalID]</local-name>
+            <parent-name>[AlexandriaZipCode.geojson]</parent-name>
+            <remote-alias>GlobalID</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape__Area</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape__Area]</local-name>
+            <parent-name>[AlexandriaZipCode.geojson]</parent-name>
+            <remote-alias>Shape__Area</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape__Length</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape__Length]</local-name>
+            <parent-name>[AlexandriaZipCode.geojson]</parent-name>
+            <remote-alias>Shape__Length</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[AlexandriaZipCode.geojson]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Account Number]' role='dimension' type='ordinal' />
+      <column caption='Global ID' datatype='string' name='[GlobalID]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Levy Year]' role='dimension' type='quantitative' />
+      <column caption='Objectid' datatype='integer' name='[OBJECTID]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Zipcode' datatype='integer' default-format='*00000' name='[ZIPCODE]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' default-format='*00000' name='[Zip Code]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column caption='AlexandriaZipCode.geojson' datatype='table' name='[__tableau_internal_object_id__].[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]' role='measure' type='quantitative' />
+      <column caption='ValidZipCodeData.csv' datatype='table' name='[__tableau_internal_object_id__].[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]' role='measure' type='quantitative' />
+      <column-instance column='[ZIPCODE]' derivation='None' name='[none:ZIPCODE:ok]' pivot='key' type='ordinal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/barre/AppData/Local/Temp/TableauTemp/#TableauTemp_0sace8u0alx8ew1bc2pb21am4e23.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/05/2025 10:08:44 PM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420' table='[Extract].[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]' type='table' />
+            <relation name='AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5' table='[Extract].[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]' type='table' />
+          </relation>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Account Number</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Account Number]</local-name>
+              <parent-name>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</parent-name>
+              <remote-alias>Account Number</remote-alias>
+              <ordinal>0</ordinal>
+              <family>ValidZipCodeData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>154145</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Levy Year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Levy Year]</local-name>
+              <parent-name>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</parent-name>
+              <remote-alias>Levy Year</remote-alias>
+              <ordinal>1</ordinal>
+              <family>ValidZipCodeData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>26</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Land Value</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Land Value]</local-name>
+              <parent-name>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</parent-name>
+              <remote-alias>Land Value</remote-alias>
+              <ordinal>2</ordinal>
+              <family>ValidZipCodeData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>54287</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Building Value</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Building Value]</local-name>
+              <parent-name>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</parent-name>
+              <remote-alias>Building Value</remote-alias>
+              <ordinal>3</ordinal>
+              <family>ValidZipCodeData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>150588</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Total Value</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Total Value]</local-name>
+              <parent-name>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</parent-name>
+              <remote-alias>Total Value</remote-alias>
+              <ordinal>4</ordinal>
+              <family>ValidZipCodeData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>166116</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Zip Code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Zip Code]</local-name>
+              <parent-name>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</parent-name>
+              <remote-alias>Zip Code</remote-alias>
+              <ordinal>5</ordinal>
+              <family>ValidZipCodeData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OBJECTID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[OBJECTID]</local-name>
+              <parent-name>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</parent-name>
+              <remote-alias>OBJECTID</remote-alias>
+              <ordinal>6</ordinal>
+              <family>AlexandriaZipCode.geojson</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ZIPCODE</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ZIPCODE]</local-name>
+              <parent-name>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</parent-name>
+              <remote-alias>ZIPCODE</remote-alias>
+              <ordinal>7</ordinal>
+              <family>AlexandriaZipCode.geojson</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>GlobalID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[GlobalID]</local-name>
+              <parent-name>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</parent-name>
+              <remote-alias>GlobalID</remote-alias>
+              <ordinal>8</ordinal>
+              <family>AlexandriaZipCode.geojson</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape__Area</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape__Area]</local-name>
+              <parent-name>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</parent-name>
+              <remote-alias>Shape__Area</remote-alias>
+              <ordinal>9</ordinal>
+              <family>AlexandriaZipCode.geojson</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape__Length</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape__Length]</local-name>
+              <parent-name>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</parent-name>
+              <remote-alias>Shape__Length</remote-alias>
+              <ordinal>10</ordinal>
+              <family>AlexandriaZipCode.geojson</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry]</local-name>
+              <parent-name>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>11</ordinal>
+              <family>AlexandriaZipCode.geojson</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:ZIPCODE:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>22206</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>22305</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>22304</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>22312</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>22302</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>22311</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>22301</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>22314</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:ZIPCODE:ok]&#10;[:Measure Names]' type='palette'>
+            <map-pri to='multiordinal_blue_10_0'>
+              <bucket>%null%</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_gold_10_0'>
+              <bucket>22302</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_gray_10_0'>
+              <bucket>22311</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_green_10_0'>
+              <bucket>22301</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_orange_10_0'>
+              <bucket>22206</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_pink_10_0'>
+              <bucket>22312</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_purple_10_0'>
+              <bucket>22314</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_red_10_0'>
+              <bucket>22305</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_teal_10_0'>
+              <bucket>22304</bucket>
+            </map-pri>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='AlexandriaZipCode.geojson' id='AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5'>
+            <properties context=''>
+              <relation connection='ogrdirect.1o2ovzr0uo2qk2167rkcc0fi93o4' name='AlexandriaZipCode.geojson' table='[AlexandriaZipCode.geojson]' type='table'>
+                <columns>
+                  <column datatype='integer' name='OBJECTID' ordinal='0' />
+                  <column datatype='integer' name='ZIPCODE' ordinal='1' />
+                  <column datatype='string' name='GlobalID' ordinal='2' />
+                  <column datatype='real' name='Shape__Area' ordinal='3' />
+                  <column datatype='real' name='Shape__Length' ordinal='4' />
+                  <column datatype='spatial' name='Geometry' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5' table='[Extract].[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]' type='table' />
+            </properties>
+          </object>
+          <object caption='ValidZipCodeData.csv' id='ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420'>
+            <properties context=''>
+              <relation connection='textscan.108mdn00dt10ii1aqglbr0e0a54o' name='ValidZipCodeData.csv' table='[ValidZipCodeData#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='Account Number' ordinal='0' />
+                  <column datatype='integer' name='Levy Year' ordinal='1' />
+                  <column datatype='integer' name='Land Value' ordinal='2' />
+                  <column datatype='integer' name='Building Value' ordinal='3' />
+                  <column datatype='integer' name='Total Value' ordinal='4' />
+                  <column datatype='integer' name='Zip Code' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420' table='[Extract].[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[Zip Code]' />
+              <expression op='[ZIPCODE]' />
+            </expression>
+            <first-end-point object-id='ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420' />
+            <second-end-point object-id='AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ValidZipCodeData.csv (Multiple Connections)' name='federated.1py6bf70tn1q1y1f4nr2s0u8m0iw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1py6bf70tn1q1y1f4nr2s0u8m0iw'>
+            <column datatype='integer' name='[Building Value]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Land Value]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Levy Year]' role='dimension' type='quantitative' />
+            <column aggregation='Sum' caption='Zipcode' datatype='integer' default-format='*00000' name='[ZIPCODE]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+            <column-instance column='[Building Value]' derivation='Median' name='[med:Building Value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Land Value]' derivation='Median' name='[med:Land Value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Levy Year]' derivation='None' name='[none:Levy Year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ZIPCODE]' derivation='None' name='[none:ZIPCODE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Land Value:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Building Value:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#ff9da7' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Land Value:qk] + [federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Building Value:qk])</rows>
+        <cols>([federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok] * [federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:qk])</cols>
+      </table>
+      <simple-id uuid='{871BE8BA-AE4E-4B6D-A17E-190F5F995D1D}' />
+    </worksheet>
+    <worksheet name='Total Value Heat Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ValidZipCodeData.csv (Multiple Connections)' name='federated.1py6bf70tn1q1y1f4nr2s0u8m0iw' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1py6bf70tn1q1y1f4nr2s0u8m0iw'>
+            <column datatype='integer' name='[Building Value]' role='measure' type='quantitative' />
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column datatype='integer' name='[Levy Year]' role='dimension' type='quantitative' />
+            <column datatype='integer' name='[Total Value]' role='measure' type='quantitative' />
+            <column aggregation='Sum' caption='Zipcode' datatype='integer' default-format='*00000' name='[ZIPCODE]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+            <column-instance column='[Total Value]' derivation='Avg' name='[avg:Total Value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Building Value]' derivation='Median' name='[med:Building Value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Total Value]' derivation='Median' name='[med:Total Value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Levy Year]' derivation='None' name='[none:Levy Year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Levy Year]' derivation='None' name='[none:Levy Year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ZIPCODE]' derivation='None' name='[none:ZIPCODE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]' included-values='non-null' />
+          <filter class='quantitative' column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Building Value:qk]' included-values='in-range' />
+          <filter class='quantitative' column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:qk]' included-values='in-range'>
+            <min>2000</min>
+            <max>2025</max>
+          </filter>
+          <slices>
+            <column>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:qk]</column>
+            <column>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Building Value:qk]</column>
+            <column>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]' field-type='quantitative' max='-8571381.3474005628' min='-8590425.9840976186' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]' field-type='quantitative' max='4700555.677084065' min='4690344.9057421153' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='font-size' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='11' />
+            <format attr='font-weight' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='bold' />
+            <format attr='color' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='#333333' />
+            <format attr='text-decoration' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='none' />
+            <format attr='font-style' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='normal' />
+            <format attr='text-align' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='right' />
+            <format attr='text-orientation' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='0' />
+            <format attr='wrap' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='off' />
+            <format attr='vertical-align' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='top' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='text-orientation' data-class='subtotal' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='0' />
+            <format attr='wrap' data-class='subtotal' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='on' />
+            <format attr='text-orientation' data-class='total' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='0' />
+            <format attr='text-align' data-class='total' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='right' />
+            <format attr='wrap' data-class='total' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='off' />
+            <format attr='vertical-align' data-class='total' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='top' />
+            <format attr='text-align' data-class='subtotal' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='left' />
+            <format attr='vertical-align' data-class='subtotal' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='top' />
+            <format attr='background-color' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='#ffffff' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='right' />
+            <format attr='vertical-align' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='bottom' />
+            <format attr='wrap' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='off' />
+            <format attr='text-orientation' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='0' />
+            <format attr='text-align' value='right' />
+            <format attr='text-orientation' value='0' />
+            <format attr='vertical-align' value='top' />
+            <format attr='text-format' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' value='' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]' palette='red_green_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='rows' value='5' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]' />
+              <text column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]' />
+              <lod column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]' />
+              <lod column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[avg:Total Value:qk]' />
+              <geometry column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='wrap' value='auto' />
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='top' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</rows>
+        <cols>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</cols>
+        <pages>
+          <column>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:ok]</column>
+        </pages>
+        <mark-labels>
+          <mark-label id='0'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[avg:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>256699.12875121005</value>
+                <value>11704903261787532553</value>
+                <value>146900.0</value>
+                <value>2001</value>
+                <value>22302</value>
+                <value>38.830588066646726</value>
+                <value>-77.089242813779137</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='0.699208' y='0.430341' />
+          </mark-label>
+          <mark-label id='1'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[avg:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>199957.8496299182</value>
+                <value>7434901983307147831</value>
+                <value>131700.0</value>
+                <value>2001</value>
+                <value>22305</value>
+                <value>38.840590993742197</value>
+                <value>-77.065796211589799</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='0.493976' y='0.695833' />
+          </mark-label>
+          <mark-label id='2'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[avg:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>355709.85348395037</value>
+                <value>4532499190793555947</value>
+                <value>227600.0</value>
+                <value>2001</value>
+                <value>22314</value>
+                <value>38.823174843051561</value>
+                <value>-77.047842238322488</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='0.757869' y='0.304587' />
+          </mark-label>
+          <mark-label id='3'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[avg:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>274753.87643852213</value>
+                <value>11899666386865375876</value>
+                <value>225500.0</value>
+                <value>2001</value>
+                <value>22301</value>
+                <value>38.818588174560688</value>
+                <value>-77.062655459363782</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='0.534031' y='0.537037' />
+          </mark-label>
+          <mark-label id='4'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[avg:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>127628.20512820513</value>
+                <value>17738802577708355274</value>
+                <value>134300.0</value>
+                <value>2001</value>
+                <value>22206</value>
+                <value>38.838108745048338</value>
+                <value>-77.099683483594077</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='0.322404' y='0.555556' />
+          </mark-label>
+          <mark-label id='5'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[avg:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>110196.72232529375</value>
+                <value>7808185353425732192</value>
+                <value>68100.0</value>
+                <value>2001</value>
+                <value>22312</value>
+                <value>38.820627316934157</value>
+                <value>-77.136258710458023</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='0.650406' y='0.748447' />
+          </mark-label>
+          <mark-label id='6'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[avg:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>212512.55442670538</value>
+                <value>14094112051659652736</value>
+                <value>177000.0</value>
+                <value>2000</value>
+                <value>22311</value>
+                <value>38.834052463242493</value>
+                <value>-77.121876954291722</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='0.491003' y='0.579387' />
+          </mark-label>
+        </mark-labels>
+      </table>
+      <simple-id uuid='{9832FD03-B94F-4FC4-AD4A-5927B61C068B}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' maximized='true' name='Total Value Heat Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Building Value:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card param='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card type='currpage' />
+            <card pane-specification-id='2' param='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <current-page>
+          <multibucket>
+            <bucket>2000</bucket>
+          </multibucket>
+        </current-page>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[avg:Total Value:qk]</field>
+            <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]</field>
+            <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]</field>
+            <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:qk]</field>
+            <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]</field>
+            <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{D82A5243-1AB7-43EF-8DFD-A6F6463C4650}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:qk]</field>
+            <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok]</field>
+            <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{7873BF71-48A3-4045-9ECA-9EE4E5BD84C5}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Total Value Heat Map' width='192'>
+      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
+      uuvdBoVi3fj/6Cmp4vLTi8UAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>

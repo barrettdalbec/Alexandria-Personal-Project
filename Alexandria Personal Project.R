@@ -218,3 +218,5 @@ save(Table_2, file = 'New_Data.RData')
 write.csv(Table_1, file = 'Ava_Streets_Table.csv')
 
 write.csv(Table_2, file = 'ABuildingLand.csv')
+
+load("C:/Users/barre/Alexandria Personal Project/AvaBuildingLand.RData")

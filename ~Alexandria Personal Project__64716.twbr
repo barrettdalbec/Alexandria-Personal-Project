@@ -1,0 +1,732 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20251.25.0313.2002                               -->
+<workbook original-version='18.1' source-build='2025.1.0 (20251.25.0313.2002)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SpatialFileLayer />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='AlexandriaPersonalProject' path='/workbooks' revision='1.1' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='ValidZipCodeData.csv (Multiple Connections)' inline='true' name='federated.1py6bf70tn1q1y1f4nr2s0u8m0iw' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ValidZipCodeData' name='textscan.108mdn00dt10ii1aqglbr0e0a54o'>
+            <connection class='textscan' directory='C:/Users/barre/Alexandria Personal Project' filename='ValidZipCodeData.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='AlexandriaZipCode' name='ogrdirect.1o2ovzr0uo2qk2167rkcc0fi93o4'>
+            <connection class='ogrdirect' directory='C:/Users/barre/Alexandria Personal Project' filename='AlexandriaZipCode.geojson' password='' server='' tablename='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.108mdn00dt10ii1aqglbr0e0a54o' name='ValidZipCodeData.csv' table='[ValidZipCodeData#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='Account Number' ordinal='0' />
+              <column datatype='integer' name='Levy Year' ordinal='1' />
+              <column datatype='integer' name='Land Value' ordinal='2' />
+              <column datatype='integer' name='Building Value' ordinal='3' />
+              <column datatype='integer' name='Total Value' ordinal='4' />
+              <column datatype='integer' name='Zip Code' ordinal='5' />
+            </columns>
+          </relation>
+          <relation connection='ogrdirect.1o2ovzr0uo2qk2167rkcc0fi93o4' name='AlexandriaZipCode.geojson' table='[AlexandriaZipCode.geojson]' type='table'>
+            <columns>
+              <column datatype='integer' name='OBJECTID' ordinal='0' />
+              <column datatype='integer' name='ZIPCODE' ordinal='1' />
+              <column datatype='string' name='GlobalID' ordinal='2' />
+              <column datatype='real' name='Shape__Area' ordinal='3' />
+              <column datatype='real' name='Shape__Length' ordinal='4' />
+              <column datatype='spatial' name='Geometry' ordinal='5' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Account Number</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Account Number]</local-name>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias>Account Number</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Levy Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Levy Year]</local-name>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias>Levy Year</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Land Value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Land Value]</local-name>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias>Land Value</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Building Value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Building Value]</local-name>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias>Building Value</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total Value</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Total Value]</local-name>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias>Total Value</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Zip Code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Zip Code]</local-name>
+            <parent-name>[ValidZipCodeData.csv]</parent-name>
+            <remote-alias>Zip Code</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OBJECTID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OBJECTID]</local-name>
+            <parent-name>[AlexandriaZipCode.geojson]</parent-name>
+            <remote-alias>OBJECTID</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ZIPCODE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ZIPCODE]</local-name>
+            <parent-name>[AlexandriaZipCode.geojson]</parent-name>
+            <remote-alias>ZIPCODE</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GlobalID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[GlobalID]</local-name>
+            <parent-name>[AlexandriaZipCode.geojson]</parent-name>
+            <remote-alias>GlobalID</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape__Area</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape__Area]</local-name>
+            <parent-name>[AlexandriaZipCode.geojson]</parent-name>
+            <remote-alias>Shape__Area</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shape__Length</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Shape__Length]</local-name>
+            <parent-name>[AlexandriaZipCode.geojson]</parent-name>
+            <remote-alias>Shape__Length</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[AlexandriaZipCode.geojson]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Account Number]' role='dimension' type='ordinal' />
+      <column caption='Global ID' datatype='string' name='[GlobalID]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Levy Year]' role='dimension' type='quantitative' />
+      <column caption='Objectid' datatype='integer' name='[OBJECTID]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Zipcode' datatype='integer' default-format='*00000' name='[ZIPCODE]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' default-format='*00000' name='[Zip Code]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column caption='AlexandriaZipCode.geojson' datatype='table' name='[__tableau_internal_object_id__].[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]' role='measure' type='quantitative' />
+      <column caption='ValidZipCodeData.csv' datatype='table' name='[__tableau_internal_object_id__].[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]' role='measure' type='quantitative' />
+      <column-instance column='[ZIPCODE]' derivation='None' name='[none:ZIPCODE:ok]' pivot='key' type='ordinal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/barre/AppData/Local/Temp/TableauTemp/#TableauTemp_14cd6nb1ec10ge1fxjjqk0a1iw45.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/06/2025 05:50:27 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420' table='[Extract].[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]' type='table' />
+            <relation name='AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5' table='[Extract].[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]' type='table' />
+          </relation>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Account Number</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Account Number]</local-name>
+              <parent-name>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</parent-name>
+              <remote-alias>Account Number</remote-alias>
+              <ordinal>0</ordinal>
+              <family>ValidZipCodeData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>146135</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Levy Year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Levy Year]</local-name>
+              <parent-name>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</parent-name>
+              <remote-alias>Levy Year</remote-alias>
+              <ordinal>1</ordinal>
+              <family>ValidZipCodeData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>26</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Land Value</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Land Value]</local-name>
+              <parent-name>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</parent-name>
+              <remote-alias>Land Value</remote-alias>
+              <ordinal>2</ordinal>
+              <family>ValidZipCodeData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>55181</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Building Value</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Building Value]</local-name>
+              <parent-name>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</parent-name>
+              <remote-alias>Building Value</remote-alias>
+              <ordinal>3</ordinal>
+              <family>ValidZipCodeData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>152011</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Total Value</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Total Value]</local-name>
+              <parent-name>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</parent-name>
+              <remote-alias>Total Value</remote-alias>
+              <ordinal>4</ordinal>
+              <family>ValidZipCodeData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>189476</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Zip Code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Zip Code]</local-name>
+              <parent-name>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</parent-name>
+              <remote-alias>Zip Code</remote-alias>
+              <ordinal>5</ordinal>
+              <family>ValidZipCodeData.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>OBJECTID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[OBJECTID]</local-name>
+              <parent-name>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</parent-name>
+              <remote-alias>OBJECTID</remote-alias>
+              <ordinal>6</ordinal>
+              <family>AlexandriaZipCode.geojson</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ZIPCODE</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ZIPCODE]</local-name>
+              <parent-name>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</parent-name>
+              <remote-alias>ZIPCODE</remote-alias>
+              <ordinal>7</ordinal>
+              <family>AlexandriaZipCode.geojson</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>GlobalID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[GlobalID]</local-name>
+              <parent-name>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</parent-name>
+              <remote-alias>GlobalID</remote-alias>
+              <ordinal>8</ordinal>
+              <family>AlexandriaZipCode.geojson</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape__Area</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape__Area]</local-name>
+              <parent-name>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</parent-name>
+              <remote-alias>Shape__Area</remote-alias>
+              <ordinal>9</ordinal>
+              <family>AlexandriaZipCode.geojson</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shape__Length</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Shape__Length]</local-name>
+              <parent-name>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</parent-name>
+              <remote-alias>Shape__Length</remote-alias>
+              <ordinal>10</ordinal>
+              <family>AlexandriaZipCode.geojson</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry]</local-name>
+              <parent-name>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>11</ordinal>
+              <family>AlexandriaZipCode.geojson</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:ZIPCODE:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>22206</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>22305</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>22304</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>22312</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>22302</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>22311</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>22301</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>22314</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:ZIPCODE:ok]&#10;[:Measure Names]' type='palette'>
+            <map-pri to='multiordinal_blue_10_0'>
+              <bucket>%null%</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_gold_10_0'>
+              <bucket>22302</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_gray_10_0'>
+              <bucket>22311</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_green_10_0'>
+              <bucket>22301</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_orange_10_0'>
+              <bucket>22206</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_pink_10_0'>
+              <bucket>22312</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_purple_10_0'>
+              <bucket>22314</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_red_10_0'>
+              <bucket>22305</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_teal_10_0'>
+              <bucket>22304</bucket>
+            </map-pri>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='AlexandriaZipCode.geojson' id='AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5'>
+            <properties context=''>
+              <relation connection='ogrdirect.1o2ovzr0uo2qk2167rkcc0fi93o4' name='AlexandriaZipCode.geojson' table='[AlexandriaZipCode.geojson]' type='table'>
+                <columns>
+                  <column datatype='integer' name='OBJECTID' ordinal='0' />
+                  <column datatype='integer' name='ZIPCODE' ordinal='1' />
+                  <column datatype='string' name='GlobalID' ordinal='2' />
+                  <column datatype='real' name='Shape__Area' ordinal='3' />
+                  <column datatype='real' name='Shape__Length' ordinal='4' />
+                  <column datatype='spatial' name='Geometry' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5' table='[Extract].[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]' type='table' />
+            </properties>
+          </object>
+          <object caption='ValidZipCodeData.csv' id='ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420'>
+            <properties context=''>
+              <relation connection='textscan.108mdn00dt10ii1aqglbr0e0a54o' name='ValidZipCodeData.csv' table='[ValidZipCodeData#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='Account Number' ordinal='0' />
+                  <column datatype='integer' name='Levy Year' ordinal='1' />
+                  <column datatype='integer' name='Land Value' ordinal='2' />
+                  <column datatype='integer' name='Building Value' ordinal='3' />
+                  <column datatype='integer' name='Total Value' ordinal='4' />
+                  <column datatype='integer' name='Zip Code' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420' table='[Extract].[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[Zip Code]' />
+              <expression op='[ZIPCODE]' />
+            </expression>
+            <first-end-point object-id='ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420' />
+            <second-end-point object-id='AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ValidZipCodeData.csv (Multiple Connections)' name='federated.1py6bf70tn1q1y1f4nr2s0u8m0iw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1py6bf70tn1q1y1f4nr2s0u8m0iw'>
+            <column datatype='integer' name='[Building Value]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Land Value]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Levy Year]' role='dimension' type='quantitative' />
+            <column aggregation='Sum' caption='Zipcode' datatype='integer' default-format='*00000' name='[ZIPCODE]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+            <column-instance column='[Building Value]' derivation='Median' name='[med:Building Value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Land Value]' derivation='Median' name='[med:Land Value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Levy Year]' derivation='None' name='[none:Levy Year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ZIPCODE]' derivation='None' name='[none:ZIPCODE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Land Value:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Building Value:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#ff9da7' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Land Value:qk] + [federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Building Value:qk])</rows>
+        <cols>([federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:ZIPCODE:ok] * [federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:qk])</cols>
+      </table>
+      <simple-id uuid='{871BE8BA-AE4E-4B6D-A17E-190F5F995D1D}' />
+    </worksheet>
+    <worksheet name='Total Value Heat Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ValidZipCodeData.csv (Multiple Connections)' name='federated.1py6bf70tn1q1y1f4nr2s0u8m0iw' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1py6bf70tn1q1y1f4nr2s0u8m0iw'>
+            <column datatype='integer' name='[Building Value]' role='measure' type='quantitative' />
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column datatype='integer' name='[Levy Year]' role='dimension' type='quantitative' />
+            <column datatype='integer' name='[Total Value]' role='measure' type='quantitative' />
+            <column aggregation='Sum' datatype='integer' default-format='*00000' name='[Zip Code]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+            <column-instance column='[Total Value]' derivation='Avg' name='[avg:Total Value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Building Value]' derivation='Median' name='[med:Building Value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Total Value]' derivation='Median' name='[med:Total Value:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Levy Year]' derivation='None' name='[none:Levy Year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Levy Year]' derivation='None' name='[none:Levy Year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Zip Code]' derivation='None' name='[none:Zip Code:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]' included-values='non-null' />
+          <filter class='quantitative' column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Building Value:qk]' included-values='in-range' />
+          <filter class='quantitative' column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:qk]' included-values='in-range'>
+            <min>2000</min>
+            <max>2025</max>
+          </filter>
+          <slices>
+            <column>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:qk]</column>
+            <column>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Building Value:qk]</column>
+            <column>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]' field-type='quantitative' max='-8572469.3793295063' min='-8590134.2163430136' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]' field-type='quantitative' max='4700266.3985988153' min='4690795.406087542' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' value='right' />
+            <format attr='text-orientation' value='0' />
+            <format attr='vertical-align' value='top' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]' palette='red_green_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='rows' value='5' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]' />
+              <text column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]' />
+              <lod column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]' />
+              <lod column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[avg:Total Value:qk]' />
+              <geometry column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='wrap' value='auto' />
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='top' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-transparency' value='255' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</rows>
+        <cols>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</cols>
+        <pages>
+          <column>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:ok]</column>
+        </pages>
+      </table>
+      <simple-id uuid='{9832FD03-B94F-4FC4-AD4A-5927B61C068B}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Total Value Heat Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='200'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='38'>
+            <card type='columns' />
+          </strip>
+          <strip size='38'>
+            <card type='rows' />
+          </strip>
+          <strip size='38'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='200'>
+            <card param='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Building Value:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card pane-specification-id='2' param='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]' type='color' />
+            <card type='currpage' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <current-page>
+          <multibucket>
+            <bucket>2000</bucket>
+          </multibucket>
+        </current-page>
+      </viewpoint>
+      <simple-id uuid='{D82A5243-1AB7-43EF-8DFD-A6F6463C4650}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='200'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='38'>
+            <card type='columns' />
+          </strip>
+          <strip size='38'>
+            <card type='rows' />
+          </strip>
+          <strip size='38'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7873BF71-48A3-4045-9ECA-9EE4E5BD84C5}' />
+    </window>
+  </windows>
+</workbook>
