@@ -15,7 +15,7 @@
     <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
-  <repository-location id='AlexandriaPersonalProject' path='/workbooks' revision='1.1' />
+  <repository-location id='AlexandriaPersonalProject' path='/workbooks' revision='1.2' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -219,6 +219,9 @@
       </connection>
       <aliases enabled='yes' />
       <column datatype='integer' name='[Account Number]' role='dimension' type='ordinal' />
+      <column caption='LabelPlacement' datatype='string' name='[Calculation_4553983713191677954]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='STR([Zip Code]) + &quot; - &quot; + STR([Total Value])' />
+      </column>
       <column caption='Global ID' datatype='string' name='[GlobalID]' role='dimension' type='nominal' />
       <column datatype='integer' name='[Levy Year]' role='dimension' type='quantitative' />
       <column caption='Objectid' datatype='integer' name='[OBJECTID]' role='measure' type='quantitative' />
@@ -228,7 +231,7 @@
       <column caption='ValidZipCodeData.csv' datatype='table' name='[__tableau_internal_object_id__].[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]' role='measure' type='quantitative' />
       <column-instance column='[ZIPCODE]' derivation='None' name='[none:ZIPCODE:ok]' pivot='key' type='ordinal' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/barre/AppData/Local/Temp/TableauTemp/#TableauTemp_14cd6nb1ec10ge1fxjjqk0a1iw45.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/06/2025 05:50:27 AM' username='tableau_internal_user'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/barre/AppData/Local/Temp/TableauTemp/#TableauTemp_14cd6nb1ec10ge1fxjjqk0a1iw45.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
           <relation type='collection'>
             <relation name='ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420' table='[Extract].[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]' type='table' />
             <relation name='AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5' table='[Extract].[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]' type='table' />
@@ -246,7 +249,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>146135</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Levy Year</remote-name>
@@ -260,7 +262,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>26</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Land Value</remote-name>
@@ -274,7 +275,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>55181</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Building Value</remote-name>
@@ -288,7 +288,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>152011</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Total Value</remote-name>
@@ -302,7 +301,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>189476</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Zip Code</remote-name>
@@ -316,7 +314,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>8</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[ValidZipCodeData.csv_40C79C8C1A074BEEBECBCFA5EDEBE420]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>OBJECTID</remote-name>
@@ -330,7 +327,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>10</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>ZIPCODE</remote-name>
@@ -344,7 +340,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>8</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>GlobalID</remote-name>
@@ -359,7 +354,6 @@
               <approx-count>10</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='binary' />
-              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Shape__Area</remote-name>
@@ -373,7 +367,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>10</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Shape__Length</remote-name>
@@ -387,7 +380,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>10</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Geometry</remote-name>
@@ -401,7 +393,6 @@
               <aggregation>Collect</aggregation>
               <approx-count>10</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[AlexandriaZipCode.geojson_616C12768E4849EEABD08C9459729BC5]</object-id>
             </metadata-record>
           </metadata-records>
         </connection>
@@ -613,13 +604,23 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]' field-type='quantitative' max='-8572469.3793295063' min='-8590134.2163430136' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]' field-type='quantitative' max='4700266.3985988153' min='4690795.406087542' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]' field-type='quantitative' max='-8563636.9608227536' min='-8598966.6348497681' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]' field-type='quantitative' max='4705001.8948544525' min='4686059.9098319057' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-align' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]' value='right' />
+            <format attr='text-orientation' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]' value='0' />
+            <format attr='vertical-align' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]' value='center' />
+            <format attr='font-style' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]' value='normal' />
+            <format attr='color' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]' value='#000000' />
+            <format attr='font-weight' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]' value='normal' />
+            <format attr='font-size' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]' value='9' />
           </style-rule>
           <style-rule element='label'>
             <format attr='text-align' value='right' />
             <format attr='text-orientation' value='0' />
             <format attr='vertical-align' value='top' />
+            <format attr='font-weight' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]' value='normal' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]' palette='red_green_diverging_10_0' type='interpolated' />
@@ -639,9 +640,9 @@
             <mark class='Automatic' />
             <encodings>
               <color column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]' />
-              <text column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]' />
               <lod column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]' />
               <lod column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[avg:Total Value:qk]' />
+              <lod column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]' />
               <geometry column='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]' />
             </encodings>
             <style>
@@ -653,7 +654,7 @@
               <style-rule element='mark'>
                 <format attr='mark-labels-cull' value='true' />
                 <format attr='mark-transparency' value='255' />
-                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-show' value='false' />
               </style-rule>
             </style>
           </pane>
@@ -663,6 +664,41 @@
         <pages>
           <column>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:ok]</column>
         </pages>
+        <mark-labels>
+          <mark-label id='0'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[avg:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[clct:Geometry:nk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Levy Year:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[none:Zip Code:ok]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Latitude (generated)]</field>
+                  <field>[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[Longitude (generated)]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>631651.43831445626</value>
+                <value>13821184940305866952</value>
+                <value>444874.0</value>
+                <value>2025</value>
+                <value>22304</value>
+                <value>38.813039410709798</value>
+                <value>-77.113253690839585</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='0.538288' y='0.482558' />
+          </mark-label>
+        </mark-labels>
       </table>
       <simple-id uuid='{9832FD03-B94F-4FC4-AD4A-5927B61C068B}' />
     </worksheet>
@@ -671,26 +707,25 @@
     <window class='worksheet' maximized='true' name='Total Value Heat Map'>
       <cards>
         <edge name='left'>
-          <strip size='200'>
+          <strip size='160'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='38'>
+          <strip size='2147483647'>
             <card type='columns' />
           </strip>
-          <strip size='38'>
+          <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='38'>
+          <strip size='2147483647'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='200'>
-            <card param='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Building Value:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+          <strip size='160'>
             <card pane-specification-id='2' param='[federated.1py6bf70tn1q1y1f4nr2s0u8m0iw].[med:Total Value:qk]' type='color' />
             <card type='currpage' />
           </strip>
@@ -699,7 +734,7 @@
       <viewpoint>
         <current-page>
           <multibucket>
-            <bucket>2000</bucket>
+            <bucket>2011</bucket>
           </multibucket>
         </current-page>
       </viewpoint>
@@ -708,20 +743,20 @@
     <window class='worksheet' name='Sheet 2'>
       <cards>
         <edge name='left'>
-          <strip size='200'>
+          <strip size='160'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='38'>
+          <strip size='30'>
             <card type='columns' />
           </strip>
-          <strip size='38'>
+          <strip size='30'>
             <card type='rows' />
           </strip>
-          <strip size='38'>
+          <strip size='30'>
             <card type='title' />
           </strip>
         </edge>

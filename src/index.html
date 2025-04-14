@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="Styles.css">
+    <script src="https://kit.fontawesome.com/5a5d7336eb.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        iframe {
+            width: 80%;
+            height: 600px; /* Adjust the height as needed */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar--menu">
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="#Home" id="navbar__logo"> <i class="fa-solid fa-code"></i> &nbsp;Barrett Dalbec</a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="#Home" class="navbar__links"> Home </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#About" class="navbar__links"> About </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#Contact" class="navbar__links"> Contact </a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="#Projects" class="button"> Projects </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Hero Section-->
+        <div id="Home" class="main">
+            <div class="main__container">
+                <div class="main__content">
+                    <h1>Barrett Dalbec</h1>
+                    <h2>Data Analyst </h2>
+                    <button class="main__btn"><a href="#Projects">Projects</a></button>
+                </div>  
+            </div>  
+        </div>
+        <!-- About Section -->
+        <div id="About" class="section">
+            <h2>About Me</h2>
+            <p>This is the about section. You can write your bio here.</p>
+        </div>
+
+        <!-- Projects Section -->
+        <div id="Projects" class="section">
+            <h2>Projects</h2>
+            <p>Here you can showcase your projects.</p>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="Contact" class="section">
+            <h2>Contact</h2>
+            <p>Put your contact info or a contact form here.</p>
+        </div>
+    </div>
+
+    <!-- Map Section-->
+    <div class="map-container">
+        <iframe src="map.html"></iframe>
+    </div>
+
+    <!-- Footer Selection-->
+    <div class="footer__container">
+        <div class="social__media">
+            <div class="social__media--wrap">
+                <p class="website__rights">©Barrett Dalbec 2024. All right reserved</p>
+                <div class="social__icons">
+                    <a href="/" class="social__icons--link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="/" class="social__icons--link" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var navbar = document.querySelector('.navbar--menu');
+            var heroSection = document.getElementById('Home');
+    
+            window.addEventListener('scroll', function () {
+                var scrollPosition = window.scrollY;
+    
+                // Adjust the offset as needed based on your design
+                var offset = heroSection.offsetHeight;
+    
+                if (scrollPosition >= offset) {
+                    navbar.classList.add('navbar--scrolled');
+                } else {
+                    navbar.classList.remove('navbar--scrolled');
+                }
+            });
+        });
+        
+    </script> 
+</body>
+</html>
+
+
+

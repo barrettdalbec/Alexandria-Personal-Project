@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@turf/intersect": "^7.0.0"
+  }
+}
