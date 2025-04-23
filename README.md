@@ -20,7 +20,7 @@ Using a combination of data scraping, cleaning, modeling, and visualization, I d
 
 ## Sample Visualization
 
-![Assessment Map by Zip Code](images/assessment_map.png)
+![Assessment Map by Zip Code](Alexandria_Personal_Project_Copy.png)
 
 ---
 
