@@ -2,7 +2,7 @@
 
 ## Overview
 
-This personal project explores transitory annual property assessment data in Alexandria, Virginia from 2011 to 2023. The goal was to understand trends in property values and how different property characteristics influence assessment changes over time.
+This personal project explores transitory annual property assessment data in Alexandria, Virginia from 2000 to 2025. The goal was to understand trends in property values and how different property characteristics influence assessment changes over time.
 
 Using a combination of data scraping, cleaning, modeling, and visualization, I developed an interactive and informative dataset that allows users to explore patterns by zip code and property type. This project not only offers a comprehensive view of real estate shifts in Alexandria, but also applies statistical and machine learning techniques to predict future assessments.
 
