@@ -108,6 +108,7 @@ for (Num in not_processed_accounts) {
   
   A_Zip_Code <- str_extract(A_Zip_Code, "\\b\\d{5}(?=\\b)")
   
+  
   #valid_zip_codes <- c("22206", "22304", "22313", "22332", "22301", "22305", 
                        #"22314", "22333", "22302", "22311", "22320", "22334", 
                        #"22303", "22312", "22331")
@@ -126,7 +127,134 @@ for (Num in not_processed_accounts) {
   
 }
 
+options(timeout = max(1000000, getOption("timeout")))
+
+URL_4 <- "https://realestate.alexandriava.gov/detail.php?accountno="
+
+if (file.exists("AvaSales.RData")) {
+  load("AvaSales.RData")
+} else {
+  sales_table <- data.frame(
+    num = character(),
+    A_Sales_Year = character(),
+    A_Sales_Value = character(),
+    stringsAsFactors = FALSE
+  )
+}
+
+# Get list of processed account numbers
+processed_sales <- unique(sales_table$num)
+
+# Get the remaining account numbers
+all_accounts <- Ava_Streets_Table$A_Account_Num
+remaining_accounts <- setdiff(all_accounts, processed_sales)
+
+# Loop through only unprocessed account numbers
+for (num in remaining_accounts) {
+  
+  URL_5 <- paste0(URL_4, num)
+  Data_4 <- read_html(URL_5)
+  
+  A_Sales_Year <- Data_4 %>% html_nodes("h2+ table tr+ tr td:nth-child(1) .data") %>% html_text()
+  A_Sales_Value <- Data_4 %>% html_nodes("h2+ table tr+ tr td:nth-child(2) .data") %>% html_text()
+  
+  if (length(A_Sales_Year) == 0 && length(A_Sales_Value) == 0) next
+  
+  max_len <- max(length(A_Sales_Year), length(A_Sales_Value))
+  
+  A_Sales_Year <- if (length(A_Sales_Year) < max_len) c(A_Sales_Year, rep(NA, max_len - length(A_Sales_Year))) else A_Sales_Year
+  A_Sales_Value <- if (length(A_Sales_Value) < max_len) c(A_Sales_Value, rep(NA, max_len - length(A_Sales_Value))) else A_Sales_Value
+  
+  New_Updated_Table <- data.frame(
+    num = rep(as.character(num), max_len),
+    A_Sales_Year = A_Sales_Year,
+    A_Sales_Value = A_Sales_Value,
+    stringsAsFactors = FALSE
+  )
+  
+  sales_table <- bind_rows(sales_table, New_Updated_Table)
+  
+  save(sales_table, file = 'AvaSales.RData')
+}
+
+
+options(timeout = max(1000000, getOption("timeout")))
+
+if (file.exists("AvaBuildingDescriptions.RData")) {
+  load("AvaBuildingDescriptions.RData")
+} else {
+  building_desc_table <- data.frame(
+    num = integer(),
+    A_Year_Built = character(),
+    A_Construction_Quality = character(),
+    A_Building_Condition = character(),
+    A_HVAC = character(),
+    A_Building_Type = character(),
+    A_Gross_Building_Area = character(),
+    A_Net_Leaseable_Area = character(),
+    stringsAsFactors = FALSE
+  )
+}
+
+# Get the list of already processed account numbers
+processed_accounts <- building_desc_table$num
+
+# Get all account numbers from the full table
+all_accounts <- Ava_Streets_Table$A_Account_Num
+
+# Filter to get only the remaining (unprocessed) account numbers
+remaining_accounts <- setdiff(all_accounts, processed_accounts)
+
+#building_desc_table <- data.frame()
+
+for (num in remaining_accounts) {
+  
+  URL_6 <- paste0(URL_4, num)
+  cat("Processing:", num, "\n")
+  
+  Data_5 <- read_html(URL_6)
+  
+  # Helper function to safely extract single value or return NA
+  extract_or_na <- function(data, xpath) {
+    result <- data %>%
+      html_nodes(xpath = xpath) %>%
+      html_text(trim = TRUE)
+    if (length(result) == 0) NA else result
+  }
+  
+  # Extract values from the Building Description section
+  A_Year_Built <- extract_or_na(Data_5, "//span[contains(text(),'Year Built:')]/following-sibling::text()[1]")
+  if (is.na(A_Year_Built)) next  # If no year built, skip this entry
+  
+  A_Construction_Quality <- extract_or_na(Data_5, "//span[contains(text(),'Construction Quality:')]/following-sibling::text()[1]")
+  A_Building_Condition    <- extract_or_na(Data_5, "//span[contains(text(),'Building Condition:')]/following-sibling::text()[1]")
+  A_HVAC                  <- extract_or_na(Data_5, "//span[contains(text(),'HVAC:')]/following-sibling::text()[1]")
+  A_Building_Type         <- extract_or_na(Data_5, "//span[contains(text(),'Building Type:')]/following-sibling::text()[1]")
+  A_Gross_Building_Area   <- extract_or_na(Data_5, "//span[contains(text(),'Gross Building Area')]/following-sibling::text()[1]")
+  A_Net_Leaseable_Area    <- extract_or_na(Data_5, "//span[contains(text(),'Net Leaseable Area')]/following-sibling::text()[1]")
+  
+  # Construct the row and bind
+  Building_Desc_Row <- data.frame(
+    num = num,
+    A_Year_Built = A_Year_Built,
+    A_Construction_Quality = A_Construction_Quality,
+    A_Building_Condition = A_Building_Condition,
+    A_HVAC = A_HVAC,
+    A_Building_Type = A_Building_Type,
+    A_Gross_Building_Area = A_Gross_Building_Area,
+    A_Net_Leaseable_Area = A_Net_Leaseable_Area,
+    stringsAsFactors = FALSE
+  )
+  
+  building_desc_table <- bind_rows(building_desc_table, Building_Desc_Row)
+  
+  save(building_desc_table, file = 'AvaBuildingDescriptions.RData')
+}
+
+
 write.csv(Table_2, file = 'AvaBuildingLand.csv')
+
+
 
 
 ### Do not run after this for now !!!
@@ -219,4 +347,10 @@ write.csv(Table_1, file = 'Ava_Streets_Table.csv')
 
 write.csv(Table_2, file = 'ABuildingLand.csv')
 
+write.csv(sales_table, file = 'Ava_Sales_Table.csv')
+
+write.csv(building_desc_table, file = 'buildingdescriptions.csv')
+
 load("C:/Users/barre/Alexandria Personal Project/AvaBuildingLand.RData")
+
+load("C:/Users/barre/Alexandria Personal Project/.RData")
