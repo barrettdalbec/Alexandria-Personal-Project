@@ -49,9 +49,9 @@ UPDATE cleaned_yearly_value_table
     SET 
         levy_month = EXTRACT(MONTH FROM TO_DATE(date, 'MM/DD/YYYY')),
         levy_year = EXTRACT(DAY FROM TO_DATE(date, 'MM/DD/YYYY')), 
-        land_value = TRIM(REPLACE(REPLACE(building_value, '$', ''), ',', '')),
+        land_value = TRIM(REPLACE(REPLACE(land_value, '$', ''), ',', '')),
         building_value = TRIM(REPLACE(REPLACE(building_value, '$', ''), ',', '')),
-        total_value = TRIM(REPLACE(REPLACE(building_value, '$', ''), ',', ''));
+        total_value = TRIM(REPLACE(REPLACE(total_value, '$', ''), ',', ''));
 
 UPDATE cleaned_yearly_value_table
     SET levy_year = levy_year + 2000; -- The 'DD' is actually the year, so '08' is '2008.'
