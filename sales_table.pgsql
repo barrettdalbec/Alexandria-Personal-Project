@@ -1,1 +1,0 @@
-SELECT * FROM ava_sales_table

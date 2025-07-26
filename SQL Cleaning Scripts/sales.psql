@@ -1,0 +1,7 @@
+DELETE TABLE IF sales_raw EXISTS;
+
+CREATE TABLE sales_raw (
+    account_id TEXT,
+    sales_year TEXT,
+    sales_price TEXT
+);

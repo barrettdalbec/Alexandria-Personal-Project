@@ -81,6 +81,9 @@ ALTER TABLE cleaned_yearly_value_table
     ALTER COLUMN zip_code TYPE INTEGER
     USING zip_code::INTEGER;
 
+DELETE FROM cleaned_yearly_value_table
+    WHERE zip_code NOT IN (22206, 22301, 22302, 22304, 22305, 22311, 22312, 22314);
+
 SELECT 
     column_name, 
     data_type 

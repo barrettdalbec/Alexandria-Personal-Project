@@ -55,6 +55,9 @@ ALTER TABLE cleaned_sales_data
     ALTER COLUMN sale_price TYPE INTEGER
     USING sale_price::INTEGER; -- Convert sale_price to INTEGER type
 
+DELETE FROM cleaned_sales_data
+    WHERE sale_price IS NULL OR sale_price = 0; -- Remove any rows where sale_price is NULL after conversion
+
 SELECT 
     column_name, 
     data_type 
